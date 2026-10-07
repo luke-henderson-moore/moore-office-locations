@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Office Locations | Moore Engineering, Inc.</title>
+  <meta name="description" content="Find a Moore Engineering, Inc. office: addresses, phone numbers and directions." />
+  <meta name="theme-color" content="#004280" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#office-list">Skip to office list</a>
+
+  <header class="topbar">
+    <a class="brand" href="https://www.mooreengineeringinc.com/" target="_blank" rel="noopener" aria-label="Moore Engineering, Inc. home">
+      <span class="brand-logo" role="img" aria-label="Moore Engineering, Inc. — a Vistal company">
+        <img src="assets/logo-1.svg" alt="" /><img src="assets/logo-2.svg" alt="" /><img src="assets/logo-3.svg" alt="" /><img src="assets/logo-4.svg" alt="" />
+      </span>
+    </a>
+    <div class="topbar-divider" aria-hidden="true"></div>
+    <div class="app-title">
+      <h1 id="app-title">Office Locations</h1>
+    </div>
+    <div class="topbar-actions">
+      <button id="signout-btn" class="btn-text" type="button" hidden>Sign out</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel" id="panel" aria-label="Offices">
+      <div class="panel-handle" id="panel-handle" aria-hidden="true"><span></span></div>
+
+      <section class="panel-head">
+        <p class="eyebrow" id="app-subtitle">Find a Moore Engineering office near you</p>
+
+        <div class="search">
+          <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 0 1 6.32 12.9l5.39 5.4-1.42 1.4-5.39-5.38A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
+          <label for="search-input" class="visually-hidden">Search offices</label>
+          <input id="search-input" type="search" placeholder="Search by office, city or state" autocomplete="off" />
+          <button id="search-clear" class="search-clear" type="button" aria-label="Clear search" hidden>&times;</button>
+        </div>
+
+        <button id="nearest-btn" class="btn-primary" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm-1-7h2v3.06A8 8 0 0 1 19.94 11H23v2h-3.06A8 8 0 0 1 13 19.94V23h-2v-3.06A8 8 0 0 1 4.06 13H1v-2h3.06A8 8 0 0 1 11 4.06V1zm1 5a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg>
+          Find my nearest office
+        </button>
+
+        <div class="chips" id="state-chips" role="group" aria-label="Filter by state"></div>
+      </section>
+
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+
+      <ol class="office-list" id="office-list" aria-label="Office results"></ol>
+
+      <section class="detail" id="detail" hidden aria-live="polite"></section>
+
+      <footer class="panel-foot">
+        <span>&copy; <span id="year"></span> Moore Engineering, Inc.</span>
+      </footer>
+    </aside>
+
+    <section class="map-wrap" aria-label="Map">
+      <div id="map"></div>
+      <div class="loader" id="loader">
+        <div class="spinner" aria-hidden="true"></div>
+        <p id="loader-text">Loading map&hellip;</p>
+      </div>
+      <img src="assets/favicon.svg" alt="" class="map-watermark" aria-hidden="true" />
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="https://js.arcgis.com/4.30/"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
